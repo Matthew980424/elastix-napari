@@ -1,0 +1,1276 @@
+# ============================================================================
+# Motion Correction Study
+# Data Organization for Repeatability Analysis of ADC Maps
+# ============================================================================
+# Structure: subject_id -> cohort_type (volunteer/patient) -> organ -> scan_session
+# ============================================================================
+
+# VOLUNTEER COHORT (Liver only)
+volunteers:
+  N21VMR_abd_001:
+    cohort_type: volunteer
+    organs: liver
+    test:
+      session_date: 2023_06_18
+      rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_001/rawdata/2023_06_18/Reconstructed'
+      scans:
+        axial:
+          FB: n2_18062023_1411453_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18062023_1416176_3_2_dwi_navigator-triggered_1package_fh98V4
+  #       coronal:
+  #         FB: n2_18062023_1435158_7_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_26
+  #     rawdata_path: '/home/x_ma/test_data/volunteer/N21VMR_abd_001/retest'
+  #     scans:
+  #       axial:
+  #         FB: n2_26062023_1138591_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_26062023_0933402_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_26062023_0942246_5_2_cdwi_3bV4
+  
+  # N21VMR_abd_003:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_17
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_17/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_17062023_1715120_2_2_dwi_3b_consensus_descendingV4
+  #       coronal:
+  #         FB: n2_17062023_1726243_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_18/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_1144448_2_2_dwi_3b_consensus_descendingV4
+  #         # NT: n2_18062023_1153023_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18062023_1207202_7_2_cdwi_3bV4
+
+  # N21VMR_abd_004:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_004/rawdata/2023_06_18_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_0911236_4_2_dwi_3b_consensus_descendingV4
+  #       # coronal:
+  #       #   FB: n2_18062023_0931574_9_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_004/rawdata/2023_06_18_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_1500412_2_2_dwi_3b_consensus_descendingV4
+  #         # NT: n2_18062023_1516180_6_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+
+  # N21VMR_abd_005:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_005/rawdata/2023_06_18_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_1032358_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18062023_1043202_5_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18062023_1100025_8_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_005/rawdata/2023_06_18_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_1542058_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18062023_1551256_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18062023_1559283_6_2_cdwi_3bV4
+
+  # N21VMR_abd_006:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_006/rawdata/2023_06_18/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18062023_1327186_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18062023_1336132_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18062023_1345142_6_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_26
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_006/rawdata/N21VMR_abd_006_retest/2023_06_26/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_26062023_1326528_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_26062023_1331263_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_26062023_1340097_5_2_cdwi_3bV4
+
+  # N21VMR_abd_007:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_20
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_007/rawdata/2023_06_20/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_20062023_1350337_2_2_dwi_3b_consensus_descendingV4
+  #       coronal:
+  #         FB: n2_20062023_1403196_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_27
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_007/rawdata/N21VMR_abd_007_retest/2023_06_27/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_27062023_0836043_2_2_dwi_3b_consensus_descendingV4
+  #         # NT: n2_27062023_0840379_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_27062023_0849030_5_2_cdwi_3bV4
+
+  # N21VMR_abd_008:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_29
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_008/rawdata/2023_06_29/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_29062023_1255268_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_29062023_1259585_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_29062023_1308389_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_06
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_008/rawdata/2023_07_06/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_06072023_1639356_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_06072023_1644139_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_06072023_1652336_5_2_cdwi_3bV4
+
+  # N21VMR_abd_009:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_20
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_009/rawdata/2023_06_20/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_20062023_1509053_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_20062023_1513388_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_20062023_1522061_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_06_27
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_009/rawdata/2023_06_27/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_27062023_1252319_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_27062023_1257093_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_27062023_1305504_5_2_cdwi_3bV4
+
+  # N21VMR_abd_010:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_12
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_010/rawdata/2023_07_12/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_12072023_1242027_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_12072023_1246448_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_12072023_1255553_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_010/rawdata/2023_07_18/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18072023_1253173_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18072023_1258025_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18072023_1307182_5_2_cdwi_3bV4
+
+  # N21VMR_abd_011:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_11
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_011/rawdata/2023_07_11/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_11072023_1242449_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_11072023_1247308_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_11072023_1255556_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_13
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_011/rawdata/2023_07_13/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_13072023_1242296_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_13072023_1247119_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_13072023_1256215_5_2_cdwi_3bV4
+
+  # N21VMR_abd_012:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_12
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_012/rawdata/2023_07_12/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_12072023_1502473_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_12072023_1507267_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_12072023_1515542_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_13
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_012/rawdata/2023_07_13/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_13072023_0954106_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_13072023_0958489_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_13072023_1007186_5_2_cdwi_3bV4
+
+  # N21VMR_abd_013:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_12
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_013/rawdata/2023_07_12/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_12072023_1548007_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_12072023_1552393_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_12072023_1600495_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_20
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_013/rawdata/2023_07_20/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_20072023_1022258_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_20072023_1027011_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_20072023_1036112_5_2_cdwi_3bV4
+
+  # N21VMR_abd_014:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_12
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_014/rawdata/2023_07_12/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_12072023_1635398_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_12072023_1640189_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_12072023_1649248_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_014/rawdata/2023_07_18/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18072023_1630515_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18072023_1637122_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18072023_1645461_6_2_cdwi_3bV4
+
+  # N21VMR_abd_015:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_18
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_015/rawdata/2023_07_18_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_18072023_1722558_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_18072023_1727268_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_18072023_1736437_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_25
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_015/rawdata/2023_07_25_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_25072023_1620092_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_25072023_1624414_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_25072023_1634053_5_2_cdwi_3bV4
+
+  # N21VMR_abd_016:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_20
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_016/rawdata/2023_07_20_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_20072023_1244245_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_20072023_1249017_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_20072023_1258048_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_016/rawdata/2023_07_24_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24072023_1550596_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24072023_1555299_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24072023_1603459_5_2_cdwi_3bV4
+
+  # N21VMR_abd_017:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_25
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_017/rawdata/2023_07_25_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         # FB: n2_25072023_1247530_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_25072023_1256353_5_2_dwi_navigator-triggered_1package_fh98_nsa12V4 # b500-dir0-rep0 has 27 slices, rest 18 slices
+  #       coronal:
+          # FB: n2_25072023_1305072_7_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_017/rawdata/2023_08_24_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24082023_1630313_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24082023_1634597_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24082023_1644142_5_2_cdwi_3bV4
+
+  # N21VMR_abd_018:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_20
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_018/rawdata/2023_07_20_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_20072023_1613336_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_20072023_1618075_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_20072023_1626224_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_01
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_018/rawdata/2023_08_01_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_01082023_1635251_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_01082023_1639585_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_01082023_1648297_5_2_cdwi_3bV4
+
+  # N21VMR_abd_019:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_019/rawdata/2023_07_24_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24072023_1312432_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24072023_1317144_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24072023_1328239_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_07_26
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_019/rawdata/2023_07_26_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_26072023_0800407_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_26072023_0808432_5_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_26072023_0819579_7_2_cdwi_3bV4
+
+  # N21VMR_abd_020:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_01
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_020/rawdata/2023_08_01_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: nv_01082023_1548431_2_2_dwi_3b_consensus_descendingV4
+  #         NT: nv_01082023_1555509_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: nv_01082023_1605454_6_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_10
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_020/rawdata/2023_08_10_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_10082023_1219432_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_10082023_1224186_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_10082023_1233580_5_2_cdwi_3bV4
+
+  # N21VMR_abd_021:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_07_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_021/rawdata/N21VMR_abd_021_test/2023_07_24/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24072023_1634584_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24072023_1639290_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24072023_1648319_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_09
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_021/rawdata/N21VMR_abd_021_retest/2023_08_09/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_09082023_1518595_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_09082023_1523303_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_09082023_1532192_5_2_cdwi_3bV4
+
+  # N21VMR_abd_022:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_09
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_022/rawdata/N21VMR_abd_022_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_09082023_1428384_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_09082023_1436363_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_09082023_1445561_6_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_15
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_022/rawdata/N21VMR_abd_022_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_15082023_1503332_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_15082023_1507599_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_15082023_1516535_5_2_cdwi_3bV4
+
+  # N21VMR_abd_023:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_09
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_023/rawdata/N21VMR_abd_023_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_09082023_1602522_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_09082023_1607215_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_09082023_1616154_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_15
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_023/rawdata/N21VMR_abd_023_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_15082023_0814271_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_15082023_0818560_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_15082023_0827591_5_2_cdwi_3bV4
+
+  # N21VMR_abd_024:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_22
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_024/rawdata/N21VMR_abd_024_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_22082023_0811161_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_22082023_0815504_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_22082023_0824224_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_024/rawdata/N21VMR_abd_024_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24082023_0806412_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24082023_0811081_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24082023_0819568_5_2_cdwi_3bV4
+
+  # N21VMR_abd_025:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_24
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_025/rawdata/N21VMR_abd_025_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_24082023_0844346_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_24082023_0849060_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_24082023_0858217_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_31
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_025/rawdata/N21VMR_abd_025_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_31082023_1617359_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_31082023_1622077_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_31082023_1631390_5_2_cdwi_3bV4
+
+  # N21VMR_abd_026:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_08_30
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_026/rawdata/N21VMR_abd_026_test/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_30082023_1447218_2_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_30082023_1451529_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_30082023_1459266_5_2_cdwi_3bV4
+  #   retest:
+  #     session_date: 2023_08_31
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_026/rawdata/N21VMR_abd_026_retest/reconstructed'
+  #     scans:
+  #       axial:
+  #         FB: n2_31082023_1253031_3_2_dwi_3b_consensus_descendingV4
+  #         NT: n2_31082023_1257382_4_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+  #       coronal:
+  #         FB: n2_31082023_1306332_6_2_cdwi_3bV4
+
+# # ============================================================================
+# # PATIENT COHORT (Lung and Liver)
+# patients:
+#   MOM-251:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_09_16
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM251/2021_09_16'
+#       scans:
+#         coronal:
+#           FB: me_16092021_1117085_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_09_17
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM251/2021_09_17'
+#       scans:
+#         coronal:
+#           FB: me_17092021_1151557_2_2_cdwi_4bV4
+
+#   MOM-255:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_09_13
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM255/2021_09_13'
+#       scans:
+#         coronal:
+#           FB: ru_13092021_1524476_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_09_15
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM255/2021_09_15'
+#       scans:
+#         coronal:
+#           FB: ru_15092021_0851271_2_2_cdwi_4bV4
+
+#   MOM-256:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_09_27
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM256/2021_09_27'
+#       scans:
+#         coronal:
+#           FB: pu_27092021_1215098_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_09_28
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM256/2021_09_28'
+#       scans:
+#         coronal:
+#           FB: pu_28092021_1144006_2_2_cdwi_4bV4
+
+#   MOM-261:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_10_13
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM261/2021_10_13'
+#       scans:
+#         coronal:
+#           FB: no_13102021_1225482_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_10_15
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM261/2021_10_15'
+#       scans:
+#         coronal:
+#           FB: no_15102021_1327529_2_2_cdwi_4bV4
+
+#   MOM-267:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_10_26
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM267/2021_10_26'
+#       scans:
+#         coronal:
+#           FB: bi_26102021_1405311_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_10_27
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM267/2021_10_27'
+#       scans:
+#         coronal:
+#           FB: bi_27102021_1601149_2_2_cdwi_4bV4
+
+#   MOM-268:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_10_18
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM268/2021_10_18'
+#       scans:
+#         coronal:
+#           FB: ve_18102021_1515520_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_10_19
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM268/2021_10_19'
+#       scans:
+#         coronal:
+#           FB: ve_19102021_1053511_2_2_cdwi_4bV4
+
+#   MOM-269:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_11_01
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM269/2021_11_01'
+#       scans:
+#         coronal:
+#           FB: wi_01112021_1217313_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_11_05
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM269/2021_11_05'
+#       scans:
+#         coronal:
+#           FB: wi_05112021_1128272_2_2_cdwi_4bV4
+
+#   MOM-279:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_11_15
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM279/2021_11_15'
+#       scans:
+#         coronal:
+#           FB: ku_15112021_1145333_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_11_16
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM279/2021_11_16'
+#       scans:
+#         coronal:
+#           FB: ku_16112021_1457534_2_2_cdwi_4bV4
+
+#   MOM-292:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2021_12_22
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM292/2021_12_22'
+#       scans:
+#         coronal:
+#           FB: ve_22122021_1216173_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2021_12_23
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM292/2021_12_23'
+#       scans:
+#         coronal:
+#           FB: ve_23122021_1038213_2_2_cdwi_4bV4
+
+#   MOM-301:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_01_24
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM301/2022_01_24'
+#       scans:
+#         coronal:
+#           FB: wi_24012022_1403366_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_01_26
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM301/2022_01_26'
+#       scans:
+#         coronal:
+#           FB: wi_26012022_0954209_4_2_cdwi_4bV4
+
+#   MOM-305:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_02_11
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM305/2022_02_11'
+#       scans:
+#         coronal:
+#           FB: ma_11022022_1208300_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_02_14
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM305/2022_02_14'
+#       scans:
+#         coronal:
+#           FB: ma_14022022_0854594_2_2_cdwi_4bV4
+
+#   MOM-308:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_02_14
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM308/2022_02_14'
+#       scans:
+#         coronal:
+#           FB: ha_14022022_1229543_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_02_16
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM308/2022_02_16'
+#       scans:
+#         coronal:
+#           FB: ha_16022022_1028204_2_2_cdwi_4bV4
+
+#   MOM-311:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_02_02
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM311/2022_02_02'
+#       scans:
+#         coronal:
+#           FB: ko_02022022_1140041_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_02_03
+#       rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2022_repeatability_motion_compensation/motion_compensation/MOM311/2022_02_03'
+#       scans:
+#         coronal:
+#           FB: ko_03022022_1342354_2_2_cdwi_4bV4
+
+#   MOM-328:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_04_01
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-328/2022_04_01/reconstructed'
+#       scans:
+#         coronal:
+#           FB: va_01042022_1427596_6_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_04_04
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-328/2022_04_04/reconstructed'
+#       scans:
+#         coronal:
+#           FB: va_04042022_1557065_2_2_cdwi_4bV4
+
+#   MOM-341:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_04_22
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-341/2022_04_22/reconstructed'
+#       scans:
+#         coronal:
+#           FB: we_22042022_1243323_6_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_04_25
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-341/2022_04_25/reconstructed'
+#       scans:
+#         coronal:
+#           FB: we_25042022_1038248_2_2_cdwi_4bV4
+
+#   MOM-342:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_04_25
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-342/2022_04_25/reconstructed'
+#       scans:
+#         coronal:
+#           FB: bu_25042022_1409469_6_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_04_28
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-342/2022_04_28/reconstructed'
+#       scans:
+#         coronal:
+#           FB: bu_28042022_0923150_2_2_cdwi_4bV4
+
+#   MOM-354:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_06_08
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-354/2022_06_08/reconstructed'
+#       scans:
+#         coronal:
+#           FB: he_08062022_1209017_6_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_06_09
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-354/2022_06_09/reconstructed'
+#       scans:
+#         coronal:
+#           FB: he_09062022_1003220_2_2_cdwi_4bV4
+
+#   MOM-357:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_06_14
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-357/2022_06_14/reconstructed'
+#       scans:
+#         coronal:
+#           FB: sc_14062022_1641522_6_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_06_15
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-357/2022_06_15/reconstructed'
+#       scans:
+#         coronal:
+#           FB: sc_15062022_1336572_2_2_cdwi_4bV4
+
+#   MOM-373:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_07_15
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-373/2022_07_15/reconstructed'
+#       scans:
+#         coronal:
+#           FB: ti_15072022_1102113_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_07_18
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-373/2022_07_18/reconstructed'
+#       scans:
+#         coronal:
+#           FB: ti_18072022_1559412_2_2_cdwi_4bV4
+
+#   MOM-378:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_07_20
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-378/2022_07_20/reconstructed'
+#       scans:
+#         coronal:
+#           FB: al_20072022_1459444_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_07_22
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-378/2022_07_22/reconstructed'
+#       scans:
+#         coronal:
+#           FB: al_22072022_0917247_2_2_cdwi_4bV4
+
+#   MOM-379:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_07_06
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-379/2022_07_06/reconstructed'
+#       scans:
+#         coronal:
+#           FB: bi_06072022_1620056_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_07_08
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-379/2022_07_08/reconstructed'
+#       scans:
+#         coronal:
+#           FB: bi_08072022_0920403_2_2_cdwi_4bV4
+
+#   MOM-380:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_07_22
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-380/2022_07_22/reconstructed'
+#       scans:
+#         coronal:
+#           FB: de_22072022_1413390_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_07_25
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-380/2022_07_25/reconstructed'
+#       scans:
+#         coronal:
+#           FB: de_25072022_0851153_2_2_cdwi_4bV4
+
+#   MOM-391:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_08_11
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-391/2022_08_11/reconstructed'
+#       scans:
+#         coronal:
+#           FB: dr_11082022_1223299_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_08_12
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-391/2022_08_12/reconstructed'
+#       scans:
+#         coronal:
+#           FB: dr_12082022_1141473_2_2_cdwi_4bV4
+
+#   MOM-392:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_08_23
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-392/2022_08_23/reconstructed'
+#       scans:
+#         coronal:
+#           FB: va_23082022_1349058_5_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_08_24
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-392/2022_08_24/reconstructed'
+#       scans:
+#         coronal:
+#           FB: va_24082022_1021345_2_2_cdwi_4bV4
+
+#   MOM-422:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_10_28
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-422/2022_10_28/reconstructed'
+#       scans:
+#         coronal:
+#           FB: he_28102022_1640282_4_2_wip_cdwi_4bV4
+#     retest:
+#       session_date: 2022_11_01
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-422/2022_11_01/reconstructed'
+#       scans:
+#         coronal:
+#           FB: he_01112022_1011492_2_2_cdwi_4bV4
+
+#   MOM-426:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2022_11_28
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-426_MRL/2022_11_28/reconstructed'
+#       scans:
+#         axial:
+#           FB: ho_28112022_1110304_2_2_wip_dwi_3b_consensusV4
+#     retest:
+#       session_date: 2022_11_29
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-426_MRL/2022_11_29/reconstructed'
+#       scans:
+#         axial:
+#           FB: ho_29112022_1415058_2_2_dwi_3b_consensusV4
+
+#   MOM-450:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2023_01_26
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-450/C1/2023_01_26/reconstructed'
+#       scans:
+#         axial:
+#           FB: ku_26012023_1033216_2_2_wip_dwi_3b_consensusV4
+#     retest:
+#       session_date: 2023_01_27
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-450/C1/2023_01_27/reconstructed'
+#       scans:
+#         axial:
+#           FB: ku_27012023_1025115_2_2_dwi_3b_consensusV4
+
+#   MOM-475:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2023_03_15
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-475/2023_03_15/reconstructed'
+#       scans:
+#         axial:
+#           FB: do_15032023_1125446_2_2_wip_dwi_3b_consensusV4
+#     retest:
+#       session_date: 2023_03_17
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-475/2023_03_17/reconstructed'
+#       scans:
+#         axial:
+#           FB: do_17032023_1447393_2_2_dwi_3b_consensusV4
+
+#   MOM-489:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2023_05_02
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-489/2023_05_02/reconstructed'
+#       scans:
+#         axial:
+#           FB: vr_02052023_1527541_5_2_wip_dwi_3b_consensusV4
+#     retest:
+#       session_date: 2023_05_03
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-489/2023_05_03/reconstructed'
+#       scans:
+#         axial:
+#           FB: vr_03052023_1612363_2_2_dwi_3b_consensusV4
+
+#   MOM-494:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_09_22
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-494/2025_09_22/reconstructed'
+#       scans:
+#         axial:
+#           FB: an_22092025_1036280_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_09_25
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-494/2025_09_25/reconstructed'
+#       scans:
+#         axial:
+#           FB: an_25092025_1502319_2_2_dwi_3b_consensus_descendingV4
+
+#   MOM-560:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2023_11_27
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-560/2023_11_27/reconstructed'
+#       scans:
+#         axial:
+#           FB: mu_27112023_1041112_4_2_wip_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2023_11_29
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-560/2023_11_29/reconstructed'
+#       scans:
+#         axial:
+#           FB: mu_29112023_1022526_3_2_dwi_3b_consensus_descendingV4
+
+#   MOM-614:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_04_10
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM_614/2025_04_10/reconstructed'
+#       scans:
+#         axial:
+#           FB: ha_10042025_1526505_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_04_11
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM_614/2025_04_11/reconstructed'
+#       scans:
+#         axial:
+#           FB: ha_11042025_1607343_2_2_dwi_3b_consensus_descendingV4
+
+#   MOM-615:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_04_28
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM615/2025_04_28/reconstructed'
+#       scans:
+#         axial:
+#           FB: br_28042025_1041366_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_04_30
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM615/2025_04_30/reconstructed'
+#       scans:
+#         axial:
+#           FB: br_30042025_0833092_3_2_dwi_3b_consensus_descendingV4
+
+#   MOM-616:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_05_06
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM616/2025_05_06/reconstructed'
+#       scans:
+#         axial:
+#           FB: vl_06052025_1213247_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_05_07
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM616/2025_05_07/reconstructed'
+#       scans:
+#         axial:
+#           FB: vl_07052025_0936347_2_2_dwi_3b_consensus_descendingV4
+
+#   MOM-623:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_08_15
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM_623/2025_08_15/reconstructed'
+#       scans:
+#         axial:
+#           FB: gl_15082025_1133538_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_08_18
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM_623/2025_08_18/reconstructed'
+#       scans:
+#         axial:
+#           FB: gl_18082025_0854173_2_2_dwi_3b_consensus_descendingV4
+
+#   MOM-626:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_08_29
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM- 626/2025_08_29/reconstructed'
+#       scans:
+#         axial:
+#           FB: ni_29082025_1127271_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_09_02
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM- 626/2025_09_02/reconstructed'
+#       scans:
+#         axial:
+#           FB: ni_02092025_1238153_2_2_dwi_3b_consensus_descendingV4
+
+#   MOM-628:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_09_18
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-628/2025_09_18/reconstructed'
+#       scans:
+#         axial:
+#           FB: wo_18092025_1457497_5_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_09_19
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-628/2025_09_19/reconstructed'
+#       scans:
+#         axial:
+#           FB: wo_19092025_0930299_3_2_dwi_3b_consensus_descendingV4
+
+#   MOM-631:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_11_17
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-631/2025_11_17/reconstructed'
+#       scans:
+#         axial:
+#           FB: wo_17112025_1059230_5_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_11_19
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/MOM-631/2025_11_19/reconstructed'
+#       scans:
+#         axial:
+#           FB: wo_19112025_1153344_2_2_dwi_3b_consensus_descendingV4
+
+#   Lever_RawData_106:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2024_06_27
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_106/2024_06_27/reconstructed'
+#       scans:
+#         axial:
+#           FB: pr_27062024_1615010_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2024_07_01
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_106/2024_07_01/reconstructed'
+#       scans:
+#         axial:
+#           FB: pr_01072024_1441291_3_2_dwi_3b_consensus_descendingV4
+
+#   Lever_RawData_107:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2024_12_17
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_107/2024_12_17/reconstructed'
+#       scans:
+#         axial:
+#           FB: ra_17122024_1055265_6_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2024_12_19
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_107/2024_12_19/reconstructed'
+#       scans:
+#         axial:
+#           FB: ra_19122024_1027155_4_2_dwi_3b_consensus_descendingV4
+
+#   Lever_RawData_109:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_05_28
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_109/2025_05_28/reconstructed'
+#       scans:
+#         axial:
+#           FB: ve_28052025_0920311_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_06_02
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_109/2025_06_02/reconstructed'
+#       scans:
+#         axial:
+#           FB: ve_02062025_0851045_2_2_dwi_3b_consensus_descendingV4
+
+#   Lever_RawData_111:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_06_24
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_111/2025_06_24/reconstructed'
+#       scans:
+#         axial:
+#           FB: oo_24062025_1242471_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_06_25
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_RawData_111/2025_06_25/reconstructed'
+#       scans:
+#         axial:
+#           FB: oo_25062025_1159527_2_2_dwi_3b_consensus_descendingV4
+
+#   Lever_RawData_112:
+#     cohort_type: patient
+#     organs: liver
+#     test:
+#       session_date: 2025_08_04
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_rawData_112/2025_08_04/reconstructed'
+#       scans:
+#         axial:
+#           FB: bo_04082025_1104131_4_2_dwi_3b_consensus_descendingV4
+#     retest:
+#       session_date: 2025_08_05
+#       rawdata_path: '//mnt/rtstorage/MRIrawdata/Liver/Lever_rawData_112/2025_08_05/reconstructed'
+#       scans:
+#         axial:
+#           FB: bo_05082025_1214540_2_2_dwi_3b_consensus_descendingV4
+# # ============================================================================
+# # Motion Correction Analysis Configuration
+# # ============================================================================
+# motion_correction:
+#   methods:
+#     - method_name: voxelmorph  # or other methods (demons, diffeomorphic, etc.)
+#       description: "Deep learning-based deformable registration"
+  
+#   analysis_plan:
+#     # Compare repeatability across these dimensions:
+#     comparisons:
+#       - axis: scan_orientation
+#         groups: [axial, coronal]
+#         description: "Assess motion correction effectiveness for different anatomical orientations"
+      
+#       - axis: organ
+#         groups: [lung, liver]
+#         description: "Compare organ-specific motion correction performance"
+      
+#       - axis: imaging_method
+#         groups: [FB, NT]
+#         cohort_restriction: volunteer  # Only volunteers have NT data
+#         description: "Compare free-breathing vs navigator-triggered repeatability"
+      
+#       - axis: cohort
+#         groups: [volunteer, patient]
+#         description: "Compare motion correction across healthy volunteers vs patients"
+  
+#   output_metrics:
+#     - ADC_repeatability: "Primary metric - compare ADC values between test/retest"
+#     - registration_error: "Deformation field accuracy"
+#     - image_similarity: "Structural similarity before/after motion correction"
