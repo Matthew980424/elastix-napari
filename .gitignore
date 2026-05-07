@@ -77,3 +77,14 @@ target/
 
 # written by setuptools_scm
 */_version.py
+
+# Generated registration outputs
+D:/run_compare/
+**/timing_results.json
+**/adc_groupwise.nii
+**/trace_groupwise.nii
+**/registered_step2_step3.nii.gz
+**/TransformParameters*.txt
+**/temp_po_*/
+**/reg_i*_j*/
+**/inv_i*/

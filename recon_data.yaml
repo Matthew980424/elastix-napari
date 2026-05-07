@@ -7,39 +7,39 @@
 
 # VOLUNTEER COHORT (Liver only)
 volunteers:
-  N21VMR_abd_001:
+  # N21VMR_abd_001:
+  #   cohort_type: volunteer
+  #   organs: liver
+    # test:
+    #   session_date: 2023_06_18
+    #   rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_001/rawdata/2023_06_18/Reconstructed'
+    #   scans:
+    #     axial:
+    #       FB: n2_18062023_1411453_2_2_dwi_3b_consensus_descendingV4
+    #       NT: n2_18062023_1416176_3_2_dwi_navigator-triggered_1package_fh98V4
+    #     coronal:
+    #       FB: n2_18062023_1435158_7_2_cdwi_3bV4
+    # retest:
+    #   session_date: 2023_06_26
+    #   rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_001/rawdata/N21VMR_abd_001_retest/2023_06_26/Reconstructed'
+    #   scans:
+    #     axial:
+    #       FB: n2_26062023_0929075_2_2_dwi_3b_consensus_descendingV4
+    #       NT: n2_26062023_0933402_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
+    #     coronal:
+    #       FB: n2_26062023_0942246_5_2_cdwi_3bV4
+  
+  N21VMR_abd_003:
     cohort_type: volunteer
     organs: liver
     test:
-      session_date: 2023_06_18
-      rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_001/rawdata/2023_06_18/Reconstructed'
+      session_date: 2023_06_17
+      rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_17/reconstructed'
       scans:
-        axial:
-          FB: n2_18062023_1411453_2_2_dwi_3b_consensus_descendingV4
-  #         NT: n2_18062023_1416176_3_2_dwi_navigator-triggered_1package_fh98V4
-  #       coronal:
-  #         FB: n2_18062023_1435158_7_2_cdwi_3bV4
-  #   retest:
-  #     session_date: 2023_06_26
-  #     rawdata_path: '/home/x_ma/test_data/volunteer/N21VMR_abd_001/retest'
-  #     scans:
-  #       axial:
-  #         FB: n2_26062023_1138591_2_2_dwi_3b_consensus_descendingV4
-  #         NT: n2_26062023_0933402_3_2_dwi_navigator-triggered_1package_fh98_nsa12V4
-  #       coronal:
-  #         FB: n2_26062023_0942246_5_2_cdwi_3bV4
-  
-  # N21VMR_abd_003:
-  #   cohort_type: volunteer
-  #   organs: liver
-  #   test:
-  #     session_date: 2023_06_17
-  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_17/reconstructed'
-  #     scans:
-  #       axial:
-  #         FB: n2_17062023_1715120_2_2_dwi_3b_consensus_descendingV4
-  #       coronal:
-  #         FB: n2_17062023_1726243_5_2_cdwi_3bV4
+        # axial:
+        #   FB: n2_17062023_1715120_2_2_dwi_3b_consensus_descendingV4
+        coronal:
+          FB: n2_17062023_1726243_5_2_cdwi_3bV4
   #   retest:
   #     session_date: 2023_06_18
   #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_18/reconstructed'

@@ -4,6 +4,7 @@ import time
 import yaml
 import json
 import tempfile
+import shutil
 from pathlib import Path
 import numpy as np
 import nibabel as nib
@@ -34,7 +35,8 @@ class CompactJSONEncoder(json.JSONEncoder):
 
 # Configuration
 DATA_LIST_PATH = 'recon_data.yaml'
-ROOT_OUTPUT_PATH = r'/mnt/rtstorage/Xiao/MotionCorrection/run_compare'
+# ROOT_OUTPUT_PATH = r'/mnt/rtstorage/Xiao/MotionCorrection/run_compare'
+ROOT_OUTPUT_PATH = r'D:/run_compare'  # For local testing
 
 # Parameter file paths
 PARAM_STEP2_BSPLINE = Path("ElastixModelZoo/models/Par0029/Par0029-step2-bspline.txt")
@@ -174,7 +176,14 @@ def save_parameter_object(po: object, path: Path):
         raise FileNotFoundError(f"Expected {result_file} not found after WriteParameterFile()")
 
 
-def register_to_midpoint(volumes, param_step2: Path, param_step2_inversion: Path, temp_dir: Path):
+def register_to_midpoint(
+    volumes,
+    param_step2: Path,
+    param_step2_inversion: Path,
+    temp_dir: Path,
+    output_dir: Path = None,
+    labels=None,
+):
     """
     Register volumes to a midpoint space (Par0029 Step 2, following Step 1 workflow).
 
@@ -271,6 +280,12 @@ def register_to_midpoint(volumes, param_step2: Path, param_step2_inversion: Path
         else:
             raise FileNotFoundError(f"Expected {elastix_inverted} not found")
 
+        if output_dir is not None:
+            output_dir.mkdir(parents=True, exist_ok=True)
+            label = labels[i] if labels is not None else f"vol_{i}"
+            final_path = output_dir / f"{label}_step2_final.txt"
+            shutil.copy(inverted_path, final_path)
+
         # Step 4: Apply inverted weighted transform to volume i
         po_apply_inverted = itk.ParameterObject.New()
         po_apply_inverted.AddParameterFile(str(inverted_path))
@@ -283,7 +298,7 @@ def register_to_midpoint(volumes, param_step2: Path, param_step2_inversion: Path
     return registered_volumes
 
 
-def register_to_b0(volume, reference, param_step3):
+def register_to_b0(volume, reference, param_step3, output_dir: Path = None, label: str = None):
     """
     Register a volume to the b=0 reference (Step 3 of Par0029).
     
@@ -307,9 +322,23 @@ def register_to_b0(volume, reference, param_step3):
     po = itk.ParameterObject.New()
     po.AddParameterFile(str(param_step3))
     
-    result_img, _ = itk.elastix_registration_method(
-        fixed_itk, moving_itk, parameter_object=po, log_to_console=False
-    )
+    with tempfile.TemporaryDirectory() as temp_dir:
+        kwargs = {
+            "parameter_object": po,
+            "log_to_console": False,
+            "output_directory": temp_dir,
+        }
+        result_img, _ = itk.elastix_registration_method(
+            fixed_itk, moving_itk, **kwargs
+        )
+
+        if output_dir is not None:
+            output_dir.mkdir(parents=True, exist_ok=True)
+            src = Path(temp_dir) / "TransformParameters.0.txt"
+            if src.is_file():
+                name = label or "volume"
+                dst = output_dir / f"{name}_step3_final.txt"
+                shutil.copy(src, dst)
     
     return itk.array_from_image(result_img)
 
@@ -462,6 +491,12 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
     midpoint_averaged = np.zeros((dimX, dimY, dimZ, dimB, dimD))
     trace_registered = np.zeros((dimX, dimY, dimZ, dimB))
     
+    transforms_dir = Path(output_folder) / "transforms"
+    step2_transforms_dir = transforms_dir / "step2"
+    step3_transforms_dir = transforms_dir / "step3"
+    step2_transforms_dir.mkdir(parents=True, exist_ok=True)
+    step3_transforms_dir.mkdir(parents=True, exist_ok=True)
+
     # Create temporary directory for intermediate files
     with tempfile.TemporaryDirectory() as temp_dir:
         temp_path = Path(temp_dir)
@@ -480,11 +515,14 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
                 
                 # Step 2: Register to midpoint space
                 print(f"      Step 2: Registering to midpoint...")
+                labels = [f"b{unique_bvals[b]}_n{n}" for n in range(nsa_per_b[b])]
                 midpoint_volumes = register_to_midpoint(
                     bval_volumes,
                     PARAM_STEP2_BSPLINE,
                     PARAM_STEP2_INVERSION,
                     temp_path,
+                    output_dir=step2_transforms_dir,
+                    labels=labels,
                 )
             
                 midpoint_averaged[:, :, :, b, 0] = np.mean(midpoint_volumes, axis=0)
@@ -499,11 +537,14 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
 
                     # Step 2: Register to midpoint space
                     print(f"      Step 2: Registering to midpoint (dir {d})...")
+                    labels = [f"b{unique_bvals[b]}_dir{d}_n{n}" for n in range(nsa_per_b[b])]
                     midpoint_volumes = register_to_midpoint(
                         bval_volumes,
                         PARAM_STEP2_BSPLINE,
                         PARAM_STEP2_INVERSION,
                         temp_path,
+                        output_dir=step2_transforms_dir,
+                        labels=labels,
                     )
 
                     midpoint_averaged[:, :, :, b, d] = np.mean(midpoint_volumes, axis=0)
@@ -513,6 +554,9 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
         for b in range(dimB):
             if b == 0:
                 trace_registered[:, :, :, b] = midpoint_averaged[:, :, :, b, 0]
+                identity_path = step3_transforms_dir / "b0_identity_step3_final.txt"
+                if not identity_path.exists():
+                    write_identity_transform(identity_path, read_image_itk(midpoint_averaged[:, :, :, b, 0]))
             else:
                 registered_vols = []
                 ref_vol = midpoint_averaged[:, :, :, 0, 0]
@@ -522,7 +566,14 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
                         raise ValueError(f"Volume shape mismatch for b={unique_bvals[b]}, d={d}: "
                                          f"vol shape {vol.shape}, ref shape {ref_vol.shape}")
                     
-                    registered_vol = register_to_b0(vol, ref_vol, PARAM_STEP3_BSPLINE)
+                    label = f"b{unique_bvals[b]}_dir{d}"
+                    registered_vol = register_to_b0(
+                        vol,
+                        ref_vol,
+                        PARAM_STEP3_BSPLINE,
+                        output_dir=step3_transforms_dir,
+                        label=label,
+                    )
                     registered_vols.append(registered_vol)
 
                 trace_registered[:, :, :, b] = np.mean(registered_vols, axis=0)
