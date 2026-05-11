@@ -47,6 +47,13 @@ PARAM_STEP3_BSPLINE = Path("ElastixModelZoo/models/Par0029/Par0029-step3-bspline
 with open(DATA_LIST_PATH, 'r') as f:
     config = yaml.safe_load(f)
 
+def to_wsl_path(path):
+    """Convert a Windows drive path to a WSL mount path when needed."""
+    if os.name != 'nt' and len(path) >= 3 and path[1] == ':' and path[2] in ('/', '\\'):
+        drive = path[0].lower()
+        remainder = path[2:].replace('\\', '/')
+        return f'/mnt/{drive}{remainder}'
+    return path.replace('\\', '/')
 
 def read_image_itk(array_data, pixel_type=itk.F):
     """Convert numpy array to ITK image."""
@@ -529,15 +536,15 @@ def process_scan(subject_id, organ, direction, acquisition, test_type, rawdata_p
 
             else:
                 for d in range(dirs_per_b[b]):
-                    bval_volumes = [imDWI[:, :, :, b, n, d]
-                                    for n in range(nsa_per_b[b])]
+                    bval_volumes = [imDWI[:, :, :, b, n, d] for n in range(4)] # Use only first 4 volumes for registration to avoid heavy computation burden (>1h)
+                                    #for n in range(nsa_per_b[b])]
 
-                    n_volumes = len(bval_volumes)
+                    n_volumes = 4 #len(bval_volumes)
                     print(f"      Number of volumes: {n_volumes} (dir {d})")
 
                     # Step 2: Register to midpoint space
                     print(f"      Step 2: Registering to midpoint (dir {d})...")
-                    labels = [f"b{unique_bvals[b]}_dir{d}_n{n}" for n in range(nsa_per_b[b])]
+                    labels = [f"b{unique_bvals[b]}_dir{d}_n{n}" for n in range(4)] # Use only first 4 volumes for registration to avoid heavy computation burden (>1h)
                     midpoint_volumes = register_to_midpoint(
                         bval_volumes,
                         PARAM_STEP2_BSPLINE,
@@ -637,7 +644,7 @@ def main():
                     continue
                 
                 session = subject_data[test_type]
-                rawdata_path = session.get('rawdata_path')
+                rawdata_path = to_wsl_path(session.get('rawdata_path'))
                 scans = session.get('scans', {})
                 
                 print(f"  {test_type.upper()} (session: {session.get('session_date')})")
@@ -665,7 +672,7 @@ def main():
                     continue
                 
                 session = subject_data[test_type]
-                rawdata_path = session.get('rawdata_path')
+                rawdata_path = to_wsl_path(session.get('rawdata_path'))
                 scans = session.get('scans', {})
                 
                 print(f"  {test_type.upper()} (session: {session.get('session_date')})")

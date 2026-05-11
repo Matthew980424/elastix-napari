@@ -6,7 +6,7 @@
 # ============================================================================
 
 # VOLUNTEER COHORT (Liver only)
-volunteers:
+# volunteers:
   # N21VMR_abd_001:
   #   cohort_type: volunteer
   #   organs: liver
@@ -29,17 +29,17 @@ volunteers:
     #     coronal:
     #       FB: n2_26062023_0942246_5_2_cdwi_3bV4
   
-  N21VMR_abd_003:
-    cohort_type: volunteer
-    organs: liver
-    test:
-      session_date: 2023_06_17
-      rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_17/reconstructed'
-      scans:
-        # axial:
-        #   FB: n2_17062023_1715120_2_2_dwi_3b_consensus_descendingV4
-        coronal:
-          FB: n2_17062023_1726243_5_2_cdwi_3bV4
+  # N21VMR_abd_003:
+  #   cohort_type: volunteer
+  #   organs: liver
+  #   test:
+  #     session_date: 2023_06_17
+  #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_17/reconstructed'
+  #     scans:
+  #       # axial:
+  #       #   FB: n2_17062023_1715120_2_2_dwi_3b_consensus_descendingV4
+  #       coronal:
+  #         FB: n2_17062023_1726243_5_2_cdwi_3bV4
   #   retest:
   #     session_date: 2023_06_18
   #     rawdata_path: '//mnt/rtstorage/Imaging Biomarkers Projects/DWI_liver/Projects/2023_hackathon_consortium/N21VMR_abd_003/rawdata/2023_06_18/reconstructed'
@@ -554,7 +554,7 @@ volunteers:
 
 # # ============================================================================
 # # PATIENT COHORT (Lung and Liver)
-# patients:
+patients:
 #   MOM-251:
 #     cohort_type: patient
 #     organs: liver
@@ -1242,6 +1242,16 @@ volunteers:
 #       scans:
 #         axial:
 #           FB: bo_05082025_1214540_2_2_dwi_3b_consensus_descendingV4
+
+  Lung_Patient1_20260309:
+    cohort_type: patient
+    organs: lung
+    test:
+      session_date: 2026_03_09
+      rawdata_path: 'E:\raw_data_recon\Lung_Patient1_20260309'
+      scans:
+        axial:
+          FB: sl_09032026_1014461_4_2_dwi_3b_consensus_descendingV4
 # # ============================================================================
 # # Motion Correction Analysis Configuration
 # # ============================================================================
